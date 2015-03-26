@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+	"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans> 
+	<bean id="userController"
+		class="com.quya.controller.user.UserController"
+		autowire="byName">
+	</bean>
+	<bean id="businessmanController"
+		class="com.quya.controller.businessman.BusinessmanController"
+		autowire="byName">
+	</bean>
+	
+		
+</beans>

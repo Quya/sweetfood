@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+	"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	
+	
+	<!-- 定义数据源 -->
+	<bean id="dataSource" 
+		class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/sweetfood"/>
+		<property name="driverClass" value="com.mysql.jdbc.Driver"/>
+		<property name="user" value="root"/>
+		<property name="password" value="root"/>
+		<property name="initialPoolSize" value="3"/>
+		<property name="maxPoolSize" value="10"/>
+		<property name="minPoolSize" value="1"/>
+		<property name="acquireIncrement" value="3"/>
+		<property name="maxIdleTime" value="60"/>
+	</bean>
+	<bean id="userDao" class="com.quya.dao.user.UserDaoImpl" >
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<bean id="businessmanDao" class="com.quya.dao.businessman.BusinessmanDaoImpl" >
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+</beans>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+   
+  
+     
+
+  
+    <meta charset="utf-8">
+    <title>SweetFood</title>
+    
+    <!-- The styles -->
+    <link href='/SweetFood/sweetfood/common/css/jquery.noty.css' rel='stylesheet'>
+    <link href='/SweetFood/sweetfood/common/css/jquery.iphone.toggle.css' rel='stylesheet'>
+    <link href='/SweetFood/sweetfood/common/css/uploadify.css' rel='stylesheet'>
+	 <link  href="/SweetFood/sweetfood/common/css/bootstrap-united.min.css" rel="stylesheet" >
+	 <link href="/SweetFood/sweetfood/common/css/charisma-app.css" rel="stylesheet" type="text/css">
+    <link href="/SweetFood/sweetfood/common/css/animate.min.css" rel='stylesheet'>
+    <link href='/SweetFood/sweetfood/common/css/noty_theme_default.css' rel='stylesheet'>
+    <link href='/SweetFood/sweetfood/common/css/elfinder.min.css' rel='stylesheet'>
+    <link href='/SweetFood/sweetfood/common/css/elfinder.theme.css' rel='stylesheet'>
+    
+  
+   
+<!-- external javascript -->
+<script src="/SweetFood/sweetfood/common/bower_components/jquery/jquery.min.js"></script>
+<script src="/SweetFood/sweetfood/common/js/init-chart.js"></script>
+
+<script src="/SweetFood/sweetfood/common/bower_components/flot/jquery.flot.js"></script>
+<script src="/SweetFood/sweetfood/common/bower_components/flot/jquery.flot.pie.js"></script>
+
+
+<script src="/SweetFood/sweetfood/common/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- library for cookie management -->
+<script src="/SweetFood/sweetfood/common/js/jquery.cookie.js"></script>
+<!-- calender plugin -->
+<script src='/SweetFood/sweetfood/common/bower_components/moment/min/moment.min.js'></script>
+<script src='/SweetFood/sweetfood/common/bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
+<!-- data table plugin -->
+<script src='/SweetFood/sweetfood/common/js/jquery.dataTables.min.js'></script>
+
+<!-- select or dropdown enhancer -->
+<script src="/SweetFood/sweetfood/common/bower_components/chosen/chosen.jquery.min.js"></script>
+<!-- plugin for gallery image view -->
+<script src="/SweetFood/sweetfood/common/bower_components/colorbox/jquery.colorbox-min.js"></script>
+<!-- notification plugin -->
+<script src="/SweetFood/sweetfood/common/js/jquery.noty.js"></script>
+<!-- library for making tables responsive -->
+<script src="/SweetFood/sweetfood/common/bower_components/responsive-tables/responsive-tables.js"></script>
+<!-- tour plugin -->
+<script src="/SweetFood/sweetfood/common/bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js"></script>
+<!-- star rating plugin -->
+<script src="/SweetFood/sweetfood/common/js/jquery.raty.min.js"></script>
+<!-- for iOS style toggle switch -->
+<script src="/SweetFood/sweetfood/common/js/jquery.iphone.toggle.js"></script>
+<!-- autogrowing textarea plugin -->
+<script src="/SweetFood/sweetfood/common/js/jquery.autogrow-textarea.js"></script>
+<!-- multiple file upload plugin -->
+<script src="/SweetFood/sweetfood/common/js/jquery.uploadify-3.1.min.js"></script>
+<!-- history.js for cross-browser state change on ajax -->
+<script src="/SweetFood/sweetfood/common/js/jquery.history.js"></script>
+<!-- application script for Charisma demo -->
+<script src="/SweetFood/sweetfood/common/js/charisma.js"></script>
+	    
+<!-- end -->
+    
+<script src="/SweetFood/sweetfood/common/js/uploadPreview.js" type="text/javascript"></script>
+    <script>
+       window.onload = function () { 
+            new uploadPreview({ UpBtn: "photo", DivShow: "photoDiv", ImgShow: "imgShow" });
+        }
+    </script>
+
+<script src="/SweetFood/sweetfood/common/js/ajaxfileupload.js"></script>
+<script src="/SweetFood/sweetfood/common/js/knockout-3.1.0.js"></script>
+<script src="/SweetFood/sweetfood/common/js/jquery_extend.js"></script>
+<script src="./js/AT_businessman_info.js"></script>
+<script src="./js/BS_businessman_info.js"></script>
+<script src="./js/ET_businessman_info.js"></script>
+    <!-- The fav icon -->
+    <link rel="shortcut icon" href="/SweetFood/sweetfood/common/img/favicon.ico">
+    <style type="text/css">
+
+    .thumbnail img, .thumbnail > a 
+    {
+    z-index: 2;
+    height: 150px;
+    width: 150px;
+    position: relative;
+    display: block;
+}
+.circle {
+            background-color:#12A5EB;;
+            width: 60px;   /* div的宽和高为600px即正方形的边长为600px */
+            height: 60px;
+            text-align: center;
+                    
+            -moz-border-radius: 30px;   /* 圆的半径为边长的一半，即300px */
+            -webkit-border-radius: 30px;
+            border-radius: 30px;
+     
+            display: -moz-box;
+            display: -webkit-box;
+            display: box;
+     
+            -moz-box-orient: horizontal; 
+            -webkit-box-orient: horizontal;
+            box-orient: horizontal;
+     
+            -moz-box-pack: center;
+            -moz-box-align: center;
+     
+            -webkit-box-pack: center;
+            -webkit-box-align: center;
+     
+            box-pack: center;
+            box-align: center; 
+            
+            font:normal 15px/100% Arial;
+            text-shadow:1px 1px 1px #000;
+            color:#fff;
+        }
+
+
+
+    </style>
+
+</head>
+
+<body onload="ET_businessman_info.init()">
+    <!-- topbar starts -->
+      <div class="navbar navbar-default" role="navigation">
+
+        <div class="navbar-inner">
+      
+            <a class="navbar-brand" href="#"> <img alt="Charisma Logo" src="/SweetFood/sweetfood/common/img/logo20.png" class="hidden-xs"/>
+                <span>SweetFood</span></a>
+
+            <!-- user dropdown starts -->
+            <div class="btn-group pull-right" style="right: 20px;">
+
+                <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> Quya</span>
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                
+                    <li><a href="businessman_info.html" class=" glyphicon glyphicon-user"> 个人中心</a></li>
+                     
+                    <li class="divider"></li>
+                    <li><a href="/SweetFood/sweetfood/registAndLogin/index.html"   class="glyphicon glyphicon-share-alt"> 退出登录</a></li>
+                </ul>
+            </div>
+                 
+        </div>
+    </div>
+    <!-- topbar ends -->
+<div class="ch-container">
+    <div class="row">
+        
+        <div id="content" class="col-lg-12 col-sm-12">
+ <div class="row">
+    <div class="box col-md-12">
+    <div class="box-inner">
+    <div class="box-header well" data-original-title="" style="background:#dd4814">
+        <h2><i class="glyphicon glyphicon-user" ></i> 请完善美店信息</h2>
+
+       
+    </div>
+    <div class="box-content">
+     <form class="form-horizontal">
+    <div class="row"><div class="input-group col-md-9" style="padding-bottom: 5px;padding-left: 20px;">
+                    <input type="text" style="display:none" value="1" name="power" id="power" data-bind="value:power">
+                    <input type="text" style="display:none"  name="shopid" id="shopid" data-bind="value:id">
+                    <span class="input-group-addon" >店名：</span>
+                    <input type="text" class="form-control" placeholder="Username" id="shopname" data-bind="value:name">
+                </div>
+                </div>
+    
+    
+   <div class="row"><div class="input-group col-md-9"style="padding-bottom: 5px;padding-left: 20px;">
+                    <span class="input-group-addon">邮箱：</span>
+                    <input type="text" class="form-control" placeholder="email" id="email"data-bind="value:email">
+                </div>
+                </div>
+ <div class="row"><div class="input-group col-md-9"style="padding-bottom: 5px;padding-left: 20px;">
+                    <span class="input-group-addon">手机：</span>
+                    <input type="text" class="form-control" placeholder="phone" id="phone" data-bind="value:phone">
+                </div>
+                   </div>
+
+    <div class="row">
+    <div class="input-group col-md-9"style="padding-bottom: 5px;padding-left: 20px;">
+                    <span class="input-group-addon">积分：</span>
+                    <input type="text" class="form-control" placeholder="credits" disabled="disabled" id="credits" data-bind="value:credits">
+                </div>
+
+        <div  class="form-group col-md-3" style="padding-left: 92px;position: absolute;top: 181px;left: 906px;">
+                            <label for="gender" class="control-label col-md-5">性别：</label>
+                            <div data-bind="visible: wantsSpam" class="col-md-4" style="position: absolute;left: 156px;top: 9px;">
+                                <input id="male" name="gender" type="radio" value="male" data-bind="checked:sex"> 男 <input id="female" name="gender" type="radio" value="female" data-bind="checked:sex"> 女
+                            </div>
+                        </div>
+                   </div>
+                   <div class="row">
+                   <div id="city"  class="input-group col-md-9"style="padding-bottom: 5px;padding-left: 20px;">
+                    <span class="input-group-addon">地址：</span>
+                    <select class="form-control prov" style="width:140px;" id="prov"data-bind="value: prov">
+                     
+                      </select><span class="input-group-addon">省</span> 
+                      <select class="form-control city" style="width:140px;"id="city0">
+                     
+                      </select>
+                      <span class="input-group-addon">市(区)</span>  
+                      <select class="form-control dist" style="width:140px;"id="dist">
+                   
+                      </select>
+                      <span class="input-group-addon">区(县)</span> 
+                      <input type="text" class="form-control" placeholder="address" style="width:320px;"id="street">
+                </div>
+                   </div>
+               <div class="row">
+               <div class="form-group" style="padding-bottom: 5px;padding-left: 5px;">
+                        <label for="description" class="control-label col-md-2" style="left: -103px;">美店信息：</label>
+                         <div class="col-md-9" style="position: relative;left: -105px;"><textarea id="shopdescription" maxlength="200" rows="5" cols="140" placeholder="200字以内的文字描述"></textarea>
+                          </div>
+                          </div>
+                           </div>
+               <div class="control-group" style="position: absolute; left: 350px; top: -22px; ">
+
+                            <div class="view" align="right">
+
+                                <div>
+                                    <div   id="photoDiv"style="position: absolute;left: 665px;top: 66px;">
+                                    <img  style="height: 122px; width: 108px; border: 2 inset #CCCCFF" src="#"id="imgShow">
+                                    </div>
+                                        <div  style="height: 122px; width: 110px; border: 2 inset #CCCCFF;margin-bottom:0px;position: absolute;top: 66px;left: 665px;"></div>
+                                           <div class="uploadify" style="position: absolute;top: 189px;left: 665px;height: 22px;width: 120px;">
+                                                <input type="file" id="photo" name="photo" accept="image/gif, image/jpeg, image/x-png, image/x-ms-bmp" style="width: 120px; padding-bottom: 5px;">
+                                            </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--view-->
+                         <div class="form-group">
+                            <div class="col-md-offset-2" style="margin: auto;text-align: center">
+                                <!--required="required" onclick="javascript:window.location.href='index.html'" data-dismiss="modal" -->
+                                <input value="保存修改" type="button" class="btn btn-primary" id="saveChange"/>
+                               
+                            </div>
+                        </div>
+    </form>
+    </div>
+
+    </div>
+    </div>
+    <!--/span-->
+</div>
+    </div><!--/fluid-row-->
+
+    <!-- Ad, you can remove it -->
+
+    <!-- Ad ends -->
+
+
+  
+    </div>
+
+   
+
+</div><!--/.fluid-container-->
+
+<script type="text/javascript" src="./js/jquery.cityselect.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#city").citySelect({
+			nodata:"none",
+			required:false
+		}); 
+	});
+</script>
+
+<script type="text/javascript">
+
+//selects 为数组形式，请注意顺序 
+
+//  var tour;
+//  var temple;
+// document.body.onmousemove=function(e){
+	
+// $("#"+e.target.id).mouseover(function(){
+// 	tour=new Tour();
+//  	tour.addStep({ 
+//             element: "#"+e.target.id,
+//             placement: "right",
+//             title: "美味蛋挞",
+//              template: "",
+//             content: "营养早餐营养早餐营养早餐</br>营养早餐营养早餐营养早餐</br>营养早餐营养早餐营养早餐</br>营养早餐营养早餐营养早餐</br>营养早餐营养早餐营养早餐</br>营养早餐营养早餐营养早餐</br>营养早餐营养早餐营养早餐</br>营养早餐营养早餐营养早餐</br>营养早餐营养早餐营养早餐"
+//         });
+// 	tour.restart();
+	
+// });
+//  $("#"+e.target.id).mouseleave(function(){
+//  		tour.end();
+//  	});	
+	
+// };
+
+
+$('.car').mouseover(function(){
+	
+	 $('.shopcar').attr('href','#');
+	
+
+});
+$('.car').mouseleave(function(){
+$('.shopcar').removeAttr("href");
+});
+</script>
+
+</body>
+</html>
